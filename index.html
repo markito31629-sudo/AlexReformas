@@ -1,0 +1,2028 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ALEX REFORMAS | Reformas y Construcción</title>
+
+<style>
+
+:root{
+    --bg:#090909;
+    --bg2:#111111;
+    --card:#171717;
+    --gold:#d99b45;
+    --gold2:#f0bd72;
+    --white:#ffffff;
+    --text:#dddddd;
+    --muted:#999999;
+    --border:rgba(255,255,255,.09);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:white;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(9,9,9,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    height:82px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:19px;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.logo-icon{
+    width:40px;
+    height:40px;
+    border:2px solid var(--gold);
+    display:grid;
+    place-items:center;
+    color:var(--gold);
+    transform:rotate(45deg);
+}
+
+.logo-icon span{
+    transform:rotate(-45deg);
+}
+
+.logo-text span{
+    color:var(--gold);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    font-size:14px;
+    color:#ddd;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+.nav-call{
+    border:1px solid var(--gold);
+    color:var(--gold);
+    padding:10px 18px;
+    border-radius:4px;
+    transition:.3s;
+}
+
+.nav-call:hover{
+    background:var(--gold);
+    color:#111;
+}
+
+.menu-btn{
+    display:none;
+    border:none;
+    background:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+
+    background:
+        linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.65),rgba(0,0,0,.25)),
+        url("construction.jpg") center/cover no-repeat;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 70%,var(--bg));
+    pointer-events:none;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:780px;
+    padding-top:80px;
+}
+
+.eyebrow{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(48px,7vw,88px);
+    line-height:.98;
+    letter-spacing:-3px;
+    margin-bottom:28px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    color:#ccc;
+    font-size:19px;
+    max-width:650px;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 25px;
+    border-radius:4px;
+    font-weight:bold;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:#111;
+}
+
+.btn-primary:hover{
+    background:var(--gold2);
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.35);
+    color:white;
+}
+
+.btn-outline:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+    transform:translateY(-3px);
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    padding:110px 0;
+}
+
+.section-heading{
+    max-width:720px;
+    margin-bottom:50px;
+}
+
+.small{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:13px;
+}
+
+.section-heading h2{
+    font-size:clamp(35px,5vw,55px);
+    line-height:1.05;
+    margin-bottom:18px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    font-size:17px;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    background:var(--bg);
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:32px 27px;
+    min-height:260px;
+    transition:.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.service:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:4px;
+    height:0;
+    background:var(--gold);
+    transition:.35s;
+}
+
+.service:hover{
+    transform:translateY(-7px);
+    border-color:rgba(217,155,69,.4);
+}
+
+.service:hover:before{
+    height:100%;
+}
+
+.service-number{
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:25px;
+}
+
+.service-icon{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.service h3{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.service p{
+    color:var(--muted);
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:var(--bg2);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+}
+
+.about-image img{
+    width:100%;
+    height:550px;
+    object-fit:cover;
+}
+
+.about-image:after{
+    content:"";
+    position:absolute;
+    left:-20px;
+    bottom:-20px;
+    width:80%;
+    height:80%;
+    border:1px solid var(--gold);
+    z-index:-1;
+}
+
+.about-text h2{
+    font-size:clamp(36px,5vw,58px);
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.about-text h2 span{
+    color:var(--gold);
+}
+
+.about-text p{
+    color:var(--muted);
+    font-size:17px;
+    margin-bottom:18px;
+}
+
+.about-list{
+    display:grid;
+    gap:14px;
+    margin-top:28px;
+}
+
+.about-list div{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.check{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    background:var(--gold);
+    color:#111;
+    display:grid;
+    place-items:center;
+    font-weight:bold;
+    flex-shrink:0;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects{
+    background:var(--bg);
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.project{
+    height:340px;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    background:#181818;
+}
+
+.project img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.project:hover img{
+    transform:scale(1.08);
+}
+
+.project-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:25px;
+    background:linear-gradient(transparent,rgba(0,0,0,.9));
+}
+
+.project-overlay span{
+    color:var(--gold);
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.project-overlay h3{
+    font-size:22px;
+}
+
+/* ================= ADVANTAGES ================= */
+
+.advantages{
+    background:var(--bg2);
+}
+
+.advantages-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.advantage{
+    border-top:1px solid var(--border);
+    padding-top:25px;
+}
+
+.advantage-number{
+    color:var(--gold);
+    font-size:38px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.advantage h3{
+    margin-bottom:10px;
+}
+
+.advantage p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* ================= PROCESS ================= */
+
+.process{
+    background:var(--bg);
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.step{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:28px;
+}
+
+.step-number{
+    color:var(--gold);
+    letter-spacing:2px;
+    font-size:12px;
+    margin-bottom:35px;
+}
+
+.step h3{
+    margin-bottom:12px;
+}
+
+.step p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    padding:90px 0;
+    background:
+        linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.65)),
+        url("construction.jpg") center/cover fixed;
+}
+
+.cta-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:35px;
+}
+
+.cta h2{
+    font-size:clamp(35px,5vw,55px);
+    line-height:1.05;
+}
+
+.cta p{
+    color:#bbb;
+    margin-top:15px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:var(--bg2);
+}
+
+.contact-title{
+    max-width:700px;
+    margin-bottom:55px;
+}
+
+.contact-title h2{
+    font-size:clamp(38px,5vw,62px);
+    line-height:1;
+}
+
+.contact-title h2 span{
+    color:var(--gold);
+}
+
+.contact-title p{
+    color:var(--muted);
+    font-size:17px;
+    margin-top:18px;
+}
+
+/* КНОПКИ КОНТАКТА */
+
+.contact-buttons{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.contact-button{
+    min-height:190px;
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.contact-button:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+}
+
+.contact-button-icon{
+    font-size:38px;
+}
+
+.contact-button small{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.contact-button h3{
+    font-size:24px;
+    margin-top:5px;
+}
+
+/* ================= POPUP ================= */
+
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+    backdrop-filter:blur(8px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:3000;
+    padding:20px;
+}
+
+.popup.active{
+    display:flex;
+}
+
+.popup-box{
+    width:min(500px,100%);
+    background:#151515;
+    border:1px solid var(--gold);
+    padding:40px;
+    text-align:center;
+    position:relative;
+    animation:popup .25s ease;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:scale(.92);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.popup-icon{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.popup-box h2{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.popup-box p{
+    color:#aaa;
+    margin-bottom:25px;
+}
+
+.popup-action{
+    display:inline-flex;
+    background:var(--gold);
+    color:#111;
+    padding:14px 24px;
+    font-weight:bold;
+    border-radius:4px;
+    transition:.3s;
+}
+
+.popup-action:hover{
+    background:var(--gold2);
+}
+
+.popup-close{
+    position:absolute;
+    top:12px;
+    right:18px;
+    background:none;
+    border:none;
+    color:white;
+    font-size:32px;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#060606;
+    border-top:1px solid var(--border);
+    padding:35px 0;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-logo{
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#e53935;
+}
+
+.footer-logo span{
+    color:#e53935;
+}
+
+.footer p{
+    color:#666;
+    font-size:13px;
+}
+
+/* ================= MODAL ================= */
+
+.image-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.94);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:4000;
+    padding:20px;
+}
+
+.image-modal.active{
+    display:flex;
+}
+
+.image-modal img{
+    max-width:92vw;
+    max-height:88vh;
+    object-fit:contain;
+}
+
+.image-close{
+    position:absolute;
+    right:30px;
+    top:20px;
+    background:none;
+    border:none;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+/* ================= TOP ================= */
+
+.top{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:48px;
+    height:48px;
+    background:#111;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    cursor:pointer;
+    z-index:900;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+}
+
+.top.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* ================= ANIMATION ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:.8s;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    nav ul{
+        position:fixed;
+        top:82px;
+        right:-100%;
+        width:280px;
+        height:calc(100vh - 82px);
+        background:#0b0b0b;
+        flex-direction:column;
+        padding:35px;
+        gap:25px;
+        transition:.4s;
+        border-left:1px solid var(--border);
+    }
+
+    nav ul.active{
+        right:0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-call{
+        display:none;
+    }
+
+    .services-grid,
+    .projects-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .advantages-grid,
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-buttons{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .cta-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:80px 0;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .services-grid,
+    .projects-grid,
+    .advantages-grid,
+    .process-grid,
+    .contact-buttons{
+        grid-template-columns:1fr;
+    }
+
+    .project{
+        height:300px;
+    }
+
+    .about-image img{
+        height:400px;
+    }
+
+    .contact-button{
+        min-height:160px;
+    }
+
+    .popup-box{
+        padding:30px 20px;
+    }
+
+    .footer{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="container nav">
+
+<a href="#inicio" class="logo">
+
+<div class="logo-icon">
+<span>K</span>
+</div>
+
+<div class="logo-text" style="color: #e53935;">
+    ALEX <span style="color: #e53935;">REFORMAS</span>
+</div>
+<title>KATENEVA CONSTRUCCIONES | Reformas y Construcción</title>
+
+</a>
+
+<nav>
+
+<ul id="navMenu">
+
+<li>
+<a href="#inicio">Inicio</a>
+</li>
+
+<li>
+<a href="#servicios">Servicios</a>
+</li>
+
+<li>
+<a href="#proyectos">Proyectos</a>
+</li>
+
+<li>
+<a href="#nosotros">Sobre nosotros</a>
+</li>
+
+<li>
+<a href="#contacto">Contacto</a>
+</li>
+
+</ul>
+
+</nav>
+
+<a
+class="nav-call"
+href="tel:+34600238949"
+>
+Llamar
+</a>
+
+<button
+class="menu-btn"
+id="menuBtn"
+>
+☰
+</button>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="inicio">
+
+<div class="container">
+
+<div class="hero-content reveal">
+
+<div class="eyebrow">
+Reformas · Construcción · Pintura
+</div>
+
+<h1>
+Reformamos tu hogar
+<span>con calidad.</span>
+</h1>
+
+<p>
+Reformas de baños, viviendas, pintura y trabajos de construcción
+con atención a cada detalle.
+</p>
+
+<div class="buttons">
+
+<a
+href="#proyectos"
+class="btn btn-primary"
+>
+Ver proyectos
+</a>
+
+<a
+href="#contacto"
+class="btn btn-outline"
+>
+Contactar
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="servicios">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="small">
+Nuestros servicios
+</div>
+
+<h2>
+Todo lo que necesitas para renovar tu espacio.
+</h2>
+
+<p>
+Trabajos de reforma y construcción adaptados a cada proyecto.
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<div class="service reveal">
+
+<div class="service-number">
+01
+</div>
+
+<div class="service-icon">
+🚿
+</div>
+
+<h3>
+Reformas de baños
+</h3>
+
+<p>
+Renovación y reforma de baños, desde pequeños trabajos
+hasta proyectos completos.
+</p>
+
+</div>
+
+
+<div class="service reveal">
+
+<div class="service-number">
+02
+</div>
+
+<div class="service-icon">
+🏠
+</div>
+
+<h3>
+Reformas de viviendas
+</h3>
+
+<p>
+Reformas de pisos y viviendas para mejorar y transformar
+los espacios.
+</p>
+
+</div>
+
+
+<div class="service reveal">
+
+<div class="service-number">
+03
+</div>
+
+<div class="service-icon">
+🎨
+</div>
+
+<h3>
+Pintura
+</h3>
+
+<p>
+Pintura y renovación de diferentes espacios y superficies.
+</p>
+
+</div>
+
+
+<div class="service reveal">
+
+<div class="service-number">
+04
+</div>
+
+<div class="service-icon">
+🔨
+</div>
+
+<h3>
+Construcción
+</h3>
+
+<p>
+Trabajos de construcción, reparación y mejora de viviendas.
+</p>
+
+</div>
+
+
+<div class="service reveal">
+
+<div class="service-number">
+05
+</div>
+
+<div class="service-icon">
+🧱
+</div>
+
+<h3>
+Reformas generales
+</h3>
+
+<p>
+Soluciones para diferentes necesidades de reforma y reparación.
+</p>
+
+</div>
+
+
+<div class="service reveal">
+
+<div class="service-number">
+06
+</div>
+
+<div class="service-icon">
+✨
+</div>
+
+<h3>
+Acabados
+</h3>
+
+<p>
+Cuidamos los detalles para conseguir un resultado limpio
+y profesional.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="nosotros">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-image reveal">
+
+<img
+src="father.jpg"
+alt="Profesional de construcción y reformas"
+>
+
+</div>
+
+
+<div class="about-text reveal">
+
+<div class="small">
+Sobre nosotros
+</div>
+
+<h2>
+Reformas hechas
+<span>con cuidado.</span>
+</h2>
+
+<p>
+Realizamos trabajos de construcción y reformas para viviendas,
+adaptándonos a las necesidades de cada cliente.
+</p>
+
+<p>
+Nos preocupamos por hacer un trabajo cuidado y prestar atención
+a los detalles de cada proyecto.
+</p>
+
+
+<div class="about-list">
+
+<div>
+<div class="check">✓</div>
+<span>Atención personalizada</span>
+</div>
+
+<div>
+<div class="check">✓</div>
+<span>Trabajo limpio y cuidado</span>
+</div>
+
+<div>
+<div class="check">✓</div>
+<span>Presupuesto adaptado al proyecto</span>
+</div>
+
+<div>
+<div class="check">✓</div>
+<span>Atención a los detalles</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="projects" id="proyectos">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="small">
+Proyectos
+</div>
+
+<h2>
+Nuestros trabajos.
+</h2>
+
+<p>
+Aquí puedes mostrar fotografías reales de las reformas realizadas.
+</p>
+
+</div>
+
+
+<div class="projects-grid">
+
+
+<div class="project reveal">
+<img
+src="work1.jpg"
+alt="Proyecto de reforma"
+>
+<div class="project-overlay">
+<span>Proyecto 01</span>
+<h3>Reforma</h3>
+</div>
+</div>
+
+
+<div class="project reveal">
+<img
+src="work2.jpg"
+alt="Reforma de baño"
+>
+<div class="project-overlay">
+<span>Proyecto 02</span>
+<h3>Baño</h3>
+</div>
+</div>
+
+
+<div class="project reveal">
+<img
+src="work3.jpg"
+alt="Trabajo de pintura"
+>
+<div class="project-overlay">
+<span>Proyecto 03</span>
+<h3>Pintura</h3>
+</div>
+</div>
+
+
+<div class="project reveal">
+<img
+src="work4.jpg"
+alt="Reforma de vivienda"
+>
+<div class="project-overlay">
+<span>Proyecto 04</span>
+<h3>Vivienda</h3>
+</div>
+</div>
+
+
+<div class="project reveal">
+<img
+src="work5.jpg"
+alt="Trabajo de construcción"
+>
+<div class="project-overlay">
+<span>Proyecto 05</span>
+<h3>Construcción</h3>
+</div>
+</div>
+
+
+<div class="project reveal">
+<img
+src="work6.jpg"
+alt="Acabados"
+>
+<div class="project-overlay">
+<span>Proyecto 06</span>
+<h3>Acabados</h3>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ADVANTAGES ================= -->
+
+<section class="advantages">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="small">
+Nuestra forma de trabajar
+</div>
+
+<h2>
+Calidad, cuidado y atención al detalle.
+</h2>
+
+</div>
+
+
+<div class="advantages-grid">
+
+<div class="advantage reveal">
+
+<div class="advantage-number">
+01
+</div>
+
+<h3>
+Calidad
+</h3>
+
+<p>
+Cuidamos cada trabajo y sus acabados.
+</p>
+
+</div>
+
+
+<div class="advantage reveal">
+
+<div class="advantage-number">
+02
+</div>
+
+<h3>
+Compromiso
+</h3>
+
+<p>
+Cada proyecto recibe la atención necesaria.
+</p>
+
+</div>
+
+
+<div class="advantage reveal">
+
+<div class="advantage-number">
+03
+</div>
+
+<h3>
+Experiencia
+</h3>
+
+<p>
+Trabajos de reforma y construcción para diferentes necesidades.
+</p>
+
+</div>
+
+
+<div class="advantage reveal">
+
+<div class="advantage-number">
+04
+</div>
+
+<h3>
+Detalle
+</h3>
+
+<p>
+Prestamos atención al resultado final.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROCESS ================= -->
+
+<section class="process">
+
+<div class="container">
+
+<div class="section-heading reveal">
+
+<div class="small">
+Proceso
+</div>
+
+<h2>
+Así trabajamos.
+</h2>
+
+<p>
+Un proceso sencillo desde el primer contacto hasta el final.
+</p>
+
+</div>
+
+
+<div class="process-grid">
+
+<div class="step reveal">
+
+<div class="step-number">
+PASO 01
+</div>
+
+<h3>
+Contacto
+</h3>
+
+<p>
+Nos cuentas qué necesitas y hablamos sobre tu proyecto.
+</p>
+
+</div>
+
+
+<div class="step reveal">
+
+<div class="step-number">
+PASO 02
+</div>
+
+<h3>
+Valoración
+</h3>
+
+<p>
+Analizamos el trabajo y las necesidades del espacio.
+</p>
+
+</div>
+
+
+<div class="step reveal">
+
+<div class="step-number">
+PASO 03
+</div>
+
+<h3>
+Presupuesto
+</h3>
+
+<p>
+Preparamos una propuesta adaptada al proyecto.
+</p>
+
+</div>
+
+
+<div class="step reveal">
+
+<div class="step-number">
+PASO 04
+</div>
+
+<h3>
+Trabajo
+</h3>
+
+<p>
+Realizamos la reforma cuidando cada detalle.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-inner reveal">
+
+<div>
+
+<h2>
+¿Tienes un proyecto?
+</h2>
+
+<p>
+Contacta con nosotros y cuéntanos qué necesitas.
+</p>
+
+</div>
+
+<a
+href="tel:+34600238949"
+class="btn btn-primary"
+>
+📞 Llamar ahora
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contacto">
+
+<div class="container">
+
+<div class="contact-title reveal">
+
+<div class="small">
+Contacto
+</div>
+
+<h2>
+Hablemos de tu
+<span>proyecto.</span>
+</h2>
+
+<p>
+Elige una opción para contactar con nosotros.
+</p>
+
+</div>
+
+
+<div class="contact-buttons">
+
+
+<!-- TELEFONO -->
+
+<div
+class="contact-button reveal"
+onclick="openPopup('phone')"
+>
+
+<div class="contact-button-icon">
+📞
+</div>
+
+<div>
+
+<small>
+Contacto directo
+</small>
+
+<h3>
+Llamar
+</h3>
+
+</div>
+
+</div>
+
+
+<!-- INSTAGRAM -->
+
+<div
+class="contact-button reveal"
+onclick="openPopup('instagram')"
+>
+
+<div class="contact-button-icon">
+📸
+</div>
+
+<div>
+
+<small>
+Síguenos
+</small>
+
+<h3>
+Instagram
+</h3>
+
+</div>
+
+</div>
+
+
+<!-- FACEBOOK -->
+
+<div
+class="contact-button reveal"
+onclick="openPopup('facebook')"
+>
+
+<div class="contact-button-icon">
+👍
+</div>
+
+<div>
+
+<small>
+Encuéntranos
+</small>
+
+<h3>
+Facebook
+</h3>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container footer">
+
+<div class="footer-logo">
+ALEX <span>REFORMAS</span>
+</div>
+
+<p>
+© 2026 KATENEVA CONSTRUCCIONES
+</p>
+
+<a href="#inicio">
+↑ Arriba
+</a>
+
+</div>
+
+</footer>
+
+
+<!-- ================= POPUP ================= -->
+
+<div
+class="popup"
+id="popup"
+onclick="closeOutside(event)"
+>
+
+<div class="popup-box">
+
+<button
+class="popup-close"
+onclick="closePopup()"
+>
+×
+</button>
+
+<div
+class="popup-icon"
+id="popupIcon"
+>
+📞
+</div>
+
+<h2 id="popupTitle">
+Contacto
+</h2>
+
+<p id="popupText">
+Información de contacto.
+</p>
+
+<a
+id="popupAction"
+class="popup-action"
+href="#"
+>
+Abrir
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ================= IMAGE MODAL ================= -->
+
+<div
+class="image-modal"
+id="imageModal"
+>
+
+<button
+class="image-close"
+onclick="closeImage()"
+>
+×
+</button>
+
+<img
+id="modalImage"
+src=""
+alt="Imagen ampliada"
+>
+
+</div>
+
+
+<!-- ================= TOP BUTTON ================= -->
+
+<button
+class="top"
+id="topBtn"
+>
+↑
+</button>
+
+
+<script>
+
+/* ================= MENU ================= */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navMenu =
+document.getElementById("navMenu");
+
+menuBtn.addEventListener("click",function(){
+
+navMenu.classList.toggle("active");
+
+});
+
+
+document.querySelectorAll("#navMenu a").forEach(function(link){
+
+link.addEventListener("click",function(){
+
+navMenu.classList.remove("active");
+
+});
+
+});
+
+
+/* ================= REVEAL ================= */
+
+const reveals =
+document.querySelectorAll(".reveal");
+
+const observer =
+new IntersectionObserver(function(entries){
+
+entries.forEach(function(entry){
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{
+threshold:.12
+});
+
+
+reveals.forEach(function(element){
+
+observer.observe(element);
+
+});
+
+
+/* ================= CONTACT POPUP ================= */
+
+function openPopup(type){
+
+const popup =
+document.getElementById("popup");
+
+const icon =
+document.getElementById("popupIcon");
+
+const title =
+document.getElementById("popupTitle");
+
+const text =
+document.getElementById("popupText");
+
+const action =
+document.getElementById("popupAction");
+
+
+if(type === "phone"){
+
+icon.innerHTML = "📞";
+
+title.innerHTML = "Llamar";
+
+text.innerHTML =
+"Contacta directamente por teléfono:<br><br><strong>+34 600 238 949</strong>";
+
+action.innerHTML =
+"Llamar ahora";
+
+action.href =
+"tel:+34600238949";
+
+}
+
+
+if(type === "instagram"){
+
+icon.innerHTML = "📸";
+
+title.innerHTML = "Instagram";
+
+text.innerHTML =
+"Visita nuestro perfil de Instagram<br><br><strong>@alex_reformas_ss</strong>";
+
+action.innerHTML =
+"Abrir Instagram";
+
+action.href =
+"https://www.instagram.com/alex_reformas_ss/";
+
+action.target =
+"_blank";
+
+}
+
+
+if(type === "facebook"){
+
+icon.innerHTML = "👍";
+
+title.innerHTML = "Facebook";
+
+text.innerHTML =
+"Visita nuestro perfil de Facebook.";
+
+action.innerHTML =
+"Abrir Facebook";
+
+action.href =
+"https://www.facebook.com/profile.php?id=100088000429574&sk=reels_tab";
+
+action.target =
+"_blank";
+
+}
+
+
+popup.classList.add("active");
+
+}
+
+
+function closePopup(){
+
+document
+.getElementById("popup")
+.classList.remove("active");
+
+}
+
+
+function closeOutside(event){
+
+if(event.target.id === "popup"){
+
+closePopup();
+
+}
+
+}
+
+
+document.addEventListener("keydown",function(event){
+
+if(event.key === "Escape"){
+
+closePopup();
+closeImage();
+
+}
+
+});
+
+
+/* ================= PROJECT IMAGE MODAL ================= */
+
+const projects =
+document.querySelectorAll(".project img");
+
+projects.forEach(function(image){
+
+image.addEventListener("click",function(){
+
+document
+.getElementById("modalImage")
+.src = image.src;
+
+document
+.getElementById("imageModal")
+.classList.add("active");
+
+});
+
+});
+
+
+function closeImage(){
+
+document
+.getElementById("imageModal")
+.classList.remove("active");
+
+}
+
+
+/* ================= TOP BUTTON ================= */
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll",function(){
+
+if(window.scrollY > 500){
+
+topBtn.classList.add("show");
+
+}else{
+
+topBtn.classList.remove("show");
+
+}
+
+});
+
+
+topBtn.addEventListener("click",function(){
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
+```
